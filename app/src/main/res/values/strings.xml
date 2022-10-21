@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Repartidor_WCQ</string>
+    <string name="btn_registrar_pedido">Registrar Pedido</string>
+    <string name="title_activity_ubicacion_pedido">Map</string>
+
+
+    <string-array name="tipospedido">
+        <item>"Carga Simple"</item>
+        <item>"Carga Pesada"</item>
+        <item>"Sobre"</item>
+    </string-array>
+
+    <string-array name="distrito">
+        <item>"El Tambo"</item>
+        <item>"Chilca"</item>
+        <item>"Huancayo"</item>
+        <item>"Huancan"</item>
+        <item>"Sapallanga"</item>
+    </string-array>
+    <string name="title_activity_ruta_maps_pedido">Map</string>
+</resources>
