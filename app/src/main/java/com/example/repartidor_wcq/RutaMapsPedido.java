@@ -8,6 +8,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -59,7 +60,7 @@ public class RutaMapsPedido extends FragmentActivity implements OnMapReadyCallba
         mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         // Add a marker in Sydney and move the camera
         LatLng destPedido = new LatLng(latitud, longitud);
-        mMap.addMarker(new MarkerOptions().position(destPedido).title("Dirección: "+direccion).title("Cliente: "+cliente));
+        mMap.addMarker(new MarkerOptions().position(destPedido).icon(BitmapDescriptorFactory.fromResource(R.drawable.repartidor)).title("Dirección: "+direccion).title("Cliente: "+cliente));
         CameraPosition cameraPosition=CameraPosition.builder().target(destPedido).zoom(15).build();
         mMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
 

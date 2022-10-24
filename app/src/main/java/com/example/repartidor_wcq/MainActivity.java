@@ -7,30 +7,30 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
 Button btnRegPedido,btnListarPedido;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btnRegPedido=findViewById(R.id.btn_reg_pedido);
-        btnListarPedido=findViewById(R.id.btnVerPedidos);
-        btnRegPedido.setOnClickListener(this);
-        btnListarPedido.setOnClickListener(this);
-    }
+        btnListarPedido=findViewById(R.id.btnListarPedidos);
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.btn_reg_pedido:{
-                Intent i=new Intent(this,UbicacionPedido.class);
+        btnRegPedido.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,UbicacionPedido.class);
+                startActivity(intent);
+            }
+        });
+
+        btnListarPedido.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(MainActivity.this,ListarPedido.class);
                 startActivity(i);
             }
-            case R.id.btnVerPedidos:{
-                Intent i=new Intent(this,ListarPedido.class);
-                startActivity(i);
-            }
-        }
-
+        });
     }
+
 }

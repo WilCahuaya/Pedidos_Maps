@@ -101,5 +101,9 @@ public class RegistrarPedido extends AppCompatActivity {
         mDatabase.child("Pedidos").child(id).setValue(pedido);
 
         Toast.makeText(this, "Registro Exitoso", Toast.LENGTH_SHORT).show();
+
+        Intent i=new Intent(RegistrarPedido.this,MainActivity.class);
+        startActivity(i);
+    
     }
 }
